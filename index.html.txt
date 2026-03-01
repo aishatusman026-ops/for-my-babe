@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #ffdde1, #ee9ca7);
+    text-align: center;
+    padding: 30px;
+    color: #333;
+}
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    max-width: 600px;
+    margin: auto;
+}
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4e88;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background: #ff1e6b;
+}
+input, textarea, select {
+    padding: 10px;
+    width: 80%;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.hidden {
+    display: none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div id="page1">
+<h2>✨ Happy New Month My Love ✨</h2>
+<p>
+May this new month bring you peace, success, favor and happiness.  
+May Allah bless your hustle, protect you and strengthen our love. Ameen 🤲❤️
+</p>
+<button onclick="nextPage(2)">Continue ❤️</button>
+</div>
+
+<div id="page2" class="hidden">
+<h2>Be Honest With Me 😌</h2>
+
+<p>How many percent do you love me?</p>
+<select id="lovePercent">
+<option>50%</option>
+<option>75%</option>
+<option>100%</option>
+<option>Infinity ♾️</option>
+</select>
+
+<p>Say a short prayer for our relationship 🤍</p>
+<textarea id="prayer" rows="4"></textarea>
+
+<button onclick="submitForm()">Submit 💕</button>
+</div>
+
+<div id="page3" class="hidden">
+<h2>🎉 Happy Birthday in Advance My King 🎉</h2>
+<p id="finalMessage"></p>
+</div>
+
+</div>
+
+<script>
+function nextPage(pageNumber) {
+    document.getElementById("page1").classList.add("hidden");
+    document.getElementById("page2").classList.add("hidden");
+    document.getElementById("page3").classList.add("hidden");
+    document.getElementById("page" + pageNumber).classList.remove("hidden");
+}
+
+function submitForm() {
+    let percent = document.getElementById("lovePercent").value;
+    let prayer = document.getElementById("prayer").value;
+
+    nextPage(3);
+
+    document.getElementById("finalMessage").innerHTML =
+    "You said you love me " + percent + " 🥰<br><br>" +
+    "And your prayer for us was:<br><i>" + prayer + "</i><br><br>" +
+    "May your new age be filled with greatness, long life and success. " +
+    "I love you so much ❤️<br><br>" +
+    "My best D ever 🫠";
+}
+</script>
+
+</body>
+</html>
